@@ -1,0 +1,242 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Grand Gaming - Where Gamers Talk, Learn, Share, &amp; build relationships</title>
+    <link rel="shortcut icon" href="https://cdn.sstatic.net/Sites/stackoverflow/Img/favicon.ico?v=ec617d715196">
+    <link rel="apple-touch-icon" href="https://cdn.sstatic.net/Sites/stackoverflow/Img/apple-touch-icon.png?v=c78bd457575a">
+    <link rel="image_src" href="https://cdn.sstatic.net/Sites/stackoverflow/Img/apple-touch-icon.png?v=c78bd457575a">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+    <!-- <link rel="stylesheet" href="assets/css/main.css"> -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="{% static 'main.css' %}">
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous"> -->
+
+</head>
+<body>
+
+<header>
+
+<div class="nav-container">
+    <nav>
+        <div class="nav-brand">
+            <div class="hamburger-menu-container">
+
+                <div class="hamburger-menu">
+                    <div class="line"></div>
+                    <div class="line"></div>
+                    <div class="line"></div>
+                </div>
+                <div class="nav-dropdown-menu">
+                    <a href="#" class="current-link">Home</a>
+                    <h5>Public</h5>
+                    <ul class="nav-ul">
+                        <li class="nav-item">
+                            <div style="display: flex; align-items: center;"> 
+                                <svg aria-hidden="true" class="svg-icon iconGlobe" width="20" height="20" viewBox="0 0 18 18"><path d="M9 1C4.64 1 1 4.64 1 9c0 4.36 3.64 8 8 8 4.36 0 8-3.64 8-8 0-4.36-3.64-8-8-8ZM8 15.32a6.46 6.46 0 0 1-4.3-2.74 6.46 6.46 0 0 1-.93-5.01L7 11.68v.8c0 .88.12 1.32 1 1.32v1.52Zm5.72-2c-.2-.66-1-1.32-1.72-1.32h-1v-2c0-.44-.56-1-1-1H6V7h1c.44 0 1-.56 1-1V5h2c.88 0 1.4-.72 1.4-1.6v-.33a6.45 6.45 0 0 1 3.83 4.51 6.45 6.45 0 0 1-1.51 5.73v.01Z"></path></svg>
+                                <a href="{% url 'forumbase:question-lists' %}" class="nav-link">Grand Gaming Q & A</a> 
+                            </div>
+                        </li>
+                        <li class="nav-item"><a href="#" class="nav-link">Tags</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link">Users</a></li>
+                    </ul>
+                    <h5>Find a Game</h5>
+                    <ul class="nav-ul">
+                        <li class="nav-item"><a href="#" class="nav-link">Games</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link">Communities</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <a href="" class="nav-icon">
+                <i class="fab fa-grand-gaming"></i>
+                <a href="{% url 'forumbase:home' %}" style="text-decoration: none; color: black;"><div class="nav-icon-text">grand<span class="nav-bold-text">gaming</span></a>
+                </div>
+            </a>
+        </div>
+        <div class="nav-base-links">
+            <ul>
+                <li><a href="{% url 'forumbase:question-lists' %}">Topics</a></li>
+                <li><a href="#">Newsletter</a></li>
+                <li><a href="#">For Pro Gamers</a></li>
+            </ul>
+        </div>
+        <div class="nav-search">
+            <div class="search-container">
+                <i class="fas fa-search"></i>
+                <form action="" method="GET">
+                    <input type="text" id="" name="search-area" placeholder="Search...">
+                    <button type="submit" style="margin-left: 340px; border-radius: 25px; border: none; padding: 8px;">Search</button>
+                </form>
+            </div>
+            <div class="search-hints">
+                <div class="search-arrow-up"></div>
+                <div class="search-hint-body">
+                    <div class="hints-grid-column">
+                        <div class="hint-text"><span>[tag] </span> search within a tag</div>
+                        <div class="hint-text"><span>user:1234 </span>  search by author</div>
+                        <div class="hint-text"><span>"words here"</span> exact phrase </div>
+                    </div>
+                    <div class="hints-grid-column">
+                        <div class="hint-text"><span>answers:0</span> unanswered questions</div>
+                        <div class="hint-text"><span> score:3  </span> posts with a 3+ score</div>
+                    </div>
+                </div>
+                <div class="search-hint-footer">
+                    <a href="#" class="btn">Ask a question</a>
+                    <a href="#" class="search-help">Search help</a>
+                </div>
+            </div>
+
+        </div>
+        <div class="nav-right-buttons">
+            <div class="search-btn">
+                <i class="fas fa-search"></i>
+            </div>
+            {% if user.is_authenticated %}
+                <a href="{% url 'profile' %}" class="btn btn-login">Profile</a>
+                <a href="{% url 'logout' %}" class="btn btn-register">Logout</a> 
+            {% else %}
+                <a href="{% url 'login' %}" class="btn btn-login">Log in</a>
+                <a href="{% url 'register' %}" class="btn btn-register">Sign up</a> 
+            {% endif %}
+        </div>
+    </nav>
+</div>
+<!-- <h1 style="font-size: 20px;">hello</h1> -->
+    <div style="margin-top: 10px;">
+        {% if messages %}
+        {% for message in messages %}
+      <div class="alert alert-{{ message.tags }}" role="alert">
+        <h4 style="text-align: center;">{{ message }}</h4>
+      </div>
+      {% endfor %}
+    {% endif %}
+    </div>
+
+        
+</header>
+
+<!-- Add block content here -->
+<!-- Add enbdblock content here -->
+
+{% block content %}
+
+{% endblock content %}
+
+<section class="jobs">
+    <div class="container">
+
+        <div class="jobs-content">
+            <h3 class="jobs-title">Looking for teammates?</h3>
+            <div class="jobs-body">
+                    <div class="jobs-items">
+                        <div class="column">
+                            <div class="jobs-item">
+                                <img src="https://cdn.sstatic.net/Img/home/jobs-tech.svg?v=42f011c01763" alt="" class="jobs-item-img">
+                                <p class="jobs-item-description">Browse games by category</p>
+                            </div>
+                            <div class="jobs-item">
+                                <img src="https://cdn.sstatic.net/Img/home/jobs-salary.svg?v=401840ff8931" alt="" class="jobs-item-img">
+                                <p class="jobs-item-description">Browse games by popularity</p>
+                            </div>
+                        </div>
+                        <div class="column">
+                            <div class="jobs-item">
+                                <img src="https://cdn.sstatic.net/Img/home/jobs-visa.svg?v=1f3acc6dc772" alt="" class="jobs-item-img">
+                                <p class="jobs-item-description">Browse games by premium access</p>
+                            </div>
+                            <div class="jobs-item">
+                                <img src="https://cdn.sstatic.net/Img/home/jobs-remote.svg?v=a4b4d1b5a80c" alt="" class="jobs-item-img">
+                                <p class="jobs-item-description">Browse single-player games</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="jobs-btn">
+                        <div class="btn btn-dark-blue jobs-btn">View all gaming communities</div>
+                    </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer class="footer">
+    <img src="https://cdn.sstatic.net/Img/home/robot.svg?v=dfa16a330cbd" alt="" class="footer-robot-img">
+<div class="container">
+    <div class="footer-content">
+        <div class="footer-icon">
+            <i class="fab fa-stack-overflow"></i>
+        </div>
+        <div class="footer-nav">
+            <div class="footer-nav-col">
+                <div class="footer-links-title"><a href="#">Grand Gaming</a></div>
+                <ul class="footer-links">
+                    <li class="footer-link-item"><a href="#" class="footer-link">Questions</a></li>
+                    <li class="footer-link-item"><a href="#" class="footer-link">Games</a></li>
+                    <li class="footer-link-item"><a href="#" class="footer-link">Developer Gaming Community</a></li>
+                    <li class="footer-link-item"><a href="#" class="footer-link">Gaming Sale notifier</a></li>
+                    <li class="footer-link-item"><a href="#" class="footer-link">Help</a></li>
+                    <li class="footer-link-item"><a href="#" class="footer-link">Mobile</a></li>
+                    <li class="footer-link-item"><a href="#" class="footer-link">Disable Responsiveness</a></li>
+                </ul>
+            </div>
+            <div class="footer-nav-col">
+                <div class="footer-links-title"><a href="#">Professional</a></div>
+                <ul class="footer-links">
+                    <li class="footer-link-item"><a href="#" class="footer-link">Pro Gaming Sections</a></li>
+                    <li class="footer-link-item"><a href="#" class="footer-link">Gaming careers</a></li>
+                    <li class="footer-link-item"><a href="#" class="footer-link">Become a PRO</a></li>
+                </ul>
+            </div>
+            <div class="footer-nav-col">
+                <div class="footer-links-title"><a href="#">Company</a></div>
+                <ul class="footer-links">
+                    <li class="footer-link-item"><a href="#" class="footer-link">About</a></li>
+                    <li class="footer-link-item"><a href="#" class="footer-link">Work Here</a></li>
+                    <li class="footer-link-item"><a href="#" class="footer-link">Legal</a></li>
+                    <li class="footer-link-item"><a href="#" class="footer-link">Privacy Policy</a></li>
+                    <li class="footer-link-item"><a href="#" class="footer-link">Contact Us</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-another-links">
+            <div class="social-media">
+                <ul>
+                    <li>
+                        <a href="#">Blog</a>
+                    </li>
+                    <li>
+                        <a href="#">Facebook</a>
+                    </li>
+                    <li>
+                        <a href="#">Twitter</a>
+                    </li>
+                    <li>
+                        <a href="#">LinkedIn</a>
+                    </li>
+                    <li>
+                        <a href="#">Instagram</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="copyright">
+                <p>© 2022 Grand Gaming Inc; user contributions licensed under <a href="">cc by-sa</a>. rev 2022.07.2.37725</p>
+            </div>
+        </div>
+    </div>
+
+</div>
+</footer>
+
+<!-- <script src="assets/js/main.js"></script> -->
+<script src="{% static 'main.js' %}"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-W8fXfP3gkOKtndU4JGtKDvXbO53Wy8SZCQHczT5FMiiqmQfUpWbYdTil/SxwZgAN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js" integrity="sha384-skAcpIdS7UcVUC05LJ9Dxay8AXcDYfBJqt1CJ85S/CFujBsIzCIv+l9liuYLaMQ/" crossorigin="anonymous"></script>
+</body>
+</html>

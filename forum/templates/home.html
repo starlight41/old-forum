@@ -1,0 +1,146 @@
+{% extends 'base.html' %}
+{% block content %}
+<section class="hero">
+    <div class="hero-content">
+        <h1 class="hero-title">We <span><3 </span> people who game</h1>
+        <p class="hero-paragraph">
+            We build products that empower gamers and connect them to solutions that enable best experience, skill growth, and true emotions.
+        </p>
+        <div class="hero-options">
+            <a href="#" class="btn btn-developers">For gamers</a>
+            <a href="#" class="btn btn-businesses">For creators</a>
+            <a href="{% url 'forumbase:question-lists' %}" class="btn btn-developers" style="margin-left: 5px;">Latest Questions</a>
+
+        </div>
+    </div>
+</section>
+
+
+<section class="for-developers">
+   <div class="container">
+       <div class="section-head">
+           <h2 class="section-title">For gamers, by gamers
+           </h2>
+           <div class="section-line"></div>
+           <p class="section-description">Grand Gaming is an <a href="#">open community</a> for anyone that games. We help you get answers to your toughest gaming questions, share knowledge with your gaming teammates in private, and find your next gaming party.
+           </p>
+       </div>
+       <div class="options">
+           <div class="option">
+               <div class="option-icon">
+                   <img src="https://cdn.sstatic.net/Img/home/public-qa.svg?v=d82acaa7df9f" alt="Public Q & A">
+               </div>
+               <div class="option-title">
+                   Public Q&A
+               </div>
+               <div class="option-description">
+                   Get answers to more than 1 million questions and give back by sharing your knowledge with others.
+                   <a href="#">Sign up</a> for an account.
+               </div>
+               <div class="option-button">
+                   <a href="{% url 'forumbase:question-lists' %}" class="option-link btn btn-dark-blue">
+                       Browse questions
+                   </a>
+               </div>
+           </div>
+           <div class="option">
+               <div class="option-icon">
+                   <img src="https://cdn.sstatic.net/Img/home/private-qa.svg?v=2c1de180b6d7" alt="Private Q & A">
+               </div>
+               <div class="option-title">
+                   Private community chats
+               </div>
+               <div class="option-description">
+                   Level up with Grand Gaming while you play. Share knowledge privately with your teammates or own community by using our flagship chat engine.
+               </div>
+               <div class="option-button">
+                   <a href="#" class="option-link btn btn-dark-blue">
+                       Try for free
+                   </a>
+               </div>
+           </div>
+           <div class="option">
+               <div class="option-icon">
+                   <img src="https://cdn.sstatic.net/Img/home/jobs.svg?v=931d6c0863ee" alt="Browse jobs
+">
+               </div>
+               <div class="option-title">
+                   Looking For Team
+               </div>
+               <div class="option-description">
+                   Find the right team through high quality listings and search for roles based on gaming role, skills, server, location, and more.
+
+
+               </div>
+               <div class="option-button">
+                   <a href="#" class="option-link btn btn-dark-blue">
+                       Start looking 
+                   </a>
+               </div>
+           </div>
+       </div>
+   </div>
+</section>
+
+<section class="questions">
+    <div class="container">
+       <div class="questions-content">
+           <div class="questions-header">
+               <h3 class="question-title">Questions are everywhere, answers are on Grand Gaming</h3>
+           </div>
+           <div class="questions-body">
+               <div class="questions-body-items">
+                   <div class="questions-body-item" data-id="0">
+                       <img src="https://cdn.sstatic.net/Img/home/ask-a-question.svg?v=f4f2050b0297" alt="" class="question-item-icon">
+                       <div class="question-item-text">Ask a question</div>
+                       <div class="question-arrow-right"></div>
+                   </div>
+                   <div class="questions-body-item"  data-id="1">
+                       <img src="https://cdn.sstatic.net/Img/home/votes.svg?v=748a8f48a8e2" alt="" class="question-item-icon">
+                       <div class="question-item-text">Vote on everything</div>
+                       <div class="question-arrow-right"></div>
+                   </div >
+                   <div class="questions-body-item"  data-id="2">
+                       <img src="https://cdn.sstatic.net/Img/home/answer.svg?v=4cd8048a676c" alt="" class="question-item-icon">
+                       <div class="question-item-text">Answer questions</div>
+                       <div class="question-arrow-right"></div>
+                   </div>
+               </div>
+               <div class="questions-body-item-content">
+                   <img src="https://cdn.sstatic.net/Img/home/illo-feats-vote.svg?v=9d2eb0efdc17" alt="" class="question-item-content-img">
+                   <h4 class="question-item-content-text">
+                       Accept the answer which solved your problem to let others benefit from the valuable information.
+                   </h4>
+                   {% if user.is_authenticated %}
+                   <a href="{% url 'forumbase:question-lists' %}" class="btn btn-dark-blue question-item-content-btn">Browse questions</a>
+                   {% else %}
+                   <a href="{% url 'register' %}" class="btn btn-dark-blue question-item-content-btn">Create an account</a>
+                   {% endif %}
+               </div>
+               <div class="questions-body-items">
+                   <div class="questions-body-item"  data-id="3">
+                       <img src="https://cdn.sstatic.net/Img/home/tags.svg?v=913379eb09eb" alt="" class="question-item-icon">
+                       <div class="question-item-text">Tag your question</div>
+                       <div class="question-arrow-left"></div>
+                   </div>
+                   <div class="questions-body-item"  data-id="4">
+                       <img src="https://cdn.sstatic.net/Img/home/accept.svg?v=27d5be078970" alt="" class="question-item-icon">
+                       <div class="question-item-text">Accept a answer</div>
+                       <div class="question-arrow-left"></div>
+                   </div>
+                   <div class="questions-body-item"  data-id="5">
+                       <img src="https://cdn.sstatic.net/Img/home/get-recognized.svg?v=3b339d9aa10c" alt="" class="question-item-icon">
+                       <div class="question-item-text">Get recognized</div>
+                       <div class="question-arrow-left"></div>
+                   </div>
+               </div>
+           </div>
+                       </p>
+                   </div>
+               </div>
+           </div>
+       </div>
+    </div>
+</section>
+
+{% endblock content %}
